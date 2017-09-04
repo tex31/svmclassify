@@ -7,4 +7,4 @@ To install:
 
 To config:
 -path to the data
-- variables: nombre de train et nombre de test
+- variables: nombre de train (datatotrain) et nombre de test (datatotest)
