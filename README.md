@@ -2,7 +2,7 @@
 classifying image rerpresented by CNN feature vector using SVM varity
 
 Download data:
--mscoco : InceptionV3
+-mscoco : InceptionV3 and annotation files
 -imageclef : vfVGG19
 
 To install:
