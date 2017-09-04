@@ -20,14 +20,14 @@ from pycocotools.coco import COCO
 vf_dir = tfmrnn_root+'cache/mscoco_image_features/inception_v3'
 #/home/misa-master2/tf-mrnn/TF-mRNN/cache/mscoco_image_features/inception_v3
 
-print "...........coco initialization"
+print ("...........coco initialization")
    #initalizer les annotations instances 
 dataDir=tfmrnn_root+'datasets/ms_coco'
 #/home/misa-master2/tf-mrnn/TF-mRNN/datasets/ms_coco
 dataType='train2014'
 annotationType = 'instances'
 annFile='%s/annotations%s/%s_%s.json'%(dataDir,annotationType,annotationType,dataType)
-print"...........coco initialized"
+print("...........coco initialized")
 coco=COCO(annFile)
     
 def load_data(anno_file_path, coco, vf_dir, datalength) :
@@ -42,7 +42,7 @@ def load_data(anno_file_path, coco, vf_dir, datalength) :
     label = []
     itt =0
     for (ind_a, anno) in enumerate(annos):
-            print "annotation........",anno['id']
+            #print ("annotation........",anno['id'])
             #load annoation instance
             #img = coco.loadImgs(anno['id'])
             annIds = coco.getAnnIds(imgIds=anno['id'])
@@ -74,11 +74,11 @@ def load_data(anno_file_path, coco, vf_dir, datalength) :
             label.append(categorie)
             itt = itt +1
             if(itt == datalength):
-                print "tapitraaa"
+                print ("tapitraaa")
                 break
             
             
-    print 'data finale  ',len(datafinale),' num_failed', num_failed
+    print ('data finale  ',len(datafinale),' num_failed', num_failed)
     return features, label
 
 datatotrain = 1000
@@ -86,14 +86,14 @@ datatotest = 1000
 #############TRAIN###################
 anno_files_path_train = tfmrnn_root+"datasets/ms_coco/mscoco_anno_files/anno_list_mscoco_train_m_RNN.npy"    
 
-print "...........coco initialization"
+print ("...........coco initialization")
    #initalizer les annotations instances 
 dataDir=tfmrnn_root+'datasets/ms_coco'
 #/home/misa-master2/tf-mrnn/TF-mRNN/
 dataType='train2014'
 annotationType = 'instances'
 annFile='%s/annotations%s/%s_%s.json'%(dataDir,annotationType,annotationType,dataType)
-print"...........coco initialized"
+print("...........coco initialized")
 coco=COCO(annFile)
 
 a,b= load_data(anno_files_path_train, coco, vf_dir, datatotrain)
@@ -102,14 +102,14 @@ Ytrain = np.array(b)
 del coco
 
 ###################VAL#############
-print "...........coco initialization"
+print ("...........coco initialization")
    #initalizer les annotations instances 
 dataDir=tfmrnn_root+'datasets/ms_coco'
 #/home/misa-master2/tf-mrnn/TF-mRNN/
 dataType='val2014'
 annotationType = 'instances'
 annFile='%s/annotations%s/%s_%s.json'%(dataDir,annotationType,annotationType,dataType)
-print"...........coco initialized"
+print ("...........coco initialized")
 coco=COCO(annFile)
 
 anno_files_path_val= tfmrnn_root+"datasets/ms_coco/mscoco_anno_files/anno_list_mscoco_modelVal_m_RNN.npy"    
@@ -120,9 +120,9 @@ Yval = np.array(b)
 
 del coco
 
-print 'fitting'
-print Yval.shape[1]
-print Yval.shape[0]
+print ('fitting')
+print (Yval.shape[1])
+print (Yval.shape[0])
 ######################PYSTRUCT SVM#############
 
 #TEST PYSTRUCT
@@ -169,7 +169,7 @@ independent_ssvm.fit(Xtrain, Ytrain)
 print("Test exact matching ratio: %f"
       %check_exactmatchratio(Yval, np.vstack(independent_ssvm.predict(Xval)), datatotest))
 
-print f1_score(Yval[3,:],np.vstack(independent_ssvm.predict(Xtrain))[3,:], average='macro')
+print (f1_score(Yval[3,:],np.vstack(independent_ssvm.predict(Xtrain))[3,:], average='macro'))
 
 '''
 
