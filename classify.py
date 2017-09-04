@@ -21,7 +21,7 @@ from pycocotools.coco import COCO
 vf_dir = tfmrnn_root+'cache/mscoco_image_features/inception_v3'
 #/home/misa-master2/tf-mrnn/TF-mRNN/cache/mscoco_image_features/inception_v3
 
-print ("...........coco initialization")
+'''print ("...........coco initialization")
    #initalizer les annotations instances 
 dataDir=tfmrnn_root+'datasets/ms_coco'
 #/home/misa-master2/tf-mrnn/TF-mRNN/datasets/ms_coco
@@ -29,7 +29,7 @@ dataType='train2014'
 annotationType = 'instances'
 annFile='%s/annotations%s/%s_%s.json'%(dataDir,annotationType,annotationType,dataType)
 print("...........coco initialized")
-coco=COCO(annFile)
+coco=COCO(annFile)'''
     
 def load_data(anno_file_path, coco, vf_dir, datalength) :
     num_failed = 0
