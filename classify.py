@@ -82,7 +82,7 @@ def load_data(anno_file_path, coco, vf_dir, datalength) :
     print ('data finale  ',len(datafinale),' num_failed', num_failed)
     return features, label
 
-datatotrain = 100000
+datatotrain = 50000
 datatotest = 10000000
 #############TRAIN###################
 anno_files_path_train = tfmrnn_root+"datasets/ms_coco/mscoco_anno_files/anno_list_mscoco_train_m_RNN.npy"    
