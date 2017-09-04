@@ -1,6 +1,10 @@
 # svmclassify
 classifying image rerpresented by CNN feature vector using SVM varity
 
+Download data:
+-mscoco : InceptionV3
+-imageclef : vfVGG19
+
 To install:
 -bitarray
 -sklearn
