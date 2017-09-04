@@ -13,7 +13,7 @@ tfmrnn_root = '/home/nnyhoavy/tfmrnn/TF-mRNN-master'
 #/home/misa-master2/tf-mrnn/TF-mRNN
 sys.path.append(tfmrnn_root + 'py_lib')
 
-from common_utils import CommonUtiler
+#from common_utils import CommonUtiler
  #pour extraire les annotations
 #%matplotlib inline
 from pycocotools.coco import COCO
