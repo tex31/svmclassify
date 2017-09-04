@@ -8,7 +8,7 @@ import string
 import bitarray
 import time
 
-tfmrnn_root = '/home/nnyhoavy/tfmrnn/TF-mRNN-master'
+tfmrnn_root = '/home/nnyhoavy/tfmrnn/TF-mRNN-master/'
 #tfmrnn_root = '/home/misa/TF-mRNN-master/'  # this file is expected to be in {caffe_root}/examples
 #/home/misa-master2/tf-mrnn/TF-mRNN
 sys.path.append(tfmrnn_root + 'py_lib')
