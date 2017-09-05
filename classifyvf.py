@@ -29,10 +29,12 @@ def check_exactmatchratio(Ygt, Ypredict,datalen):
     return exact / (datalen)
 vfnumpypath = "../vflabelnumpy/"
 
-Xtrain = np.loadtxt(vfnumpypath+"Xtrain.txt")
-Ytrain = np.loadtxt(vfnumpypath+"Ytrain.txt")
 Xval = np.loadtxt(vfnumpypath+"Xval.txt")
-Yval = np.loadtxt(vfnumpypath+"Yval.txt")
+Yval = np.loadtxt(vfnumpypath+"Yval.txt",dtype="int")
+print("val end export")
+Xtrain = np.loadtxt(vfnumpypath+"Xtrain.txt")
+Ytrain = np.loadtxt(vfnumpypath+"Ytrain.txt",dtype="int")
+print("train end export")
 
 #independent Model
 independent_model = MultiLabelClf(inference_method='unary')
