@@ -27,6 +27,7 @@ def check_exactmatchratio(Ygt, Ypredict,datalen):
             if(gt==est).all():
                 exact +=1
     return exact / (datalen)
+vfnumpypath = "../vflabelnumpy/"
 
 Xtrain = np.loadtxt(vfnumpypath+"Xtrain.txt")
 Ytrain = np.loadtxt(vfnumpypath+"Ytrain.txt")
