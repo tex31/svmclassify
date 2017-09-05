@@ -28,7 +28,10 @@ def check_exactmatchratio(Ygt, Ypredict,datalen):
                 exact +=1
     return exact / (datalen)
 
-
+Xtrain = np.loadtxt(vfnumpypath+"Xtrain.txt")
+Ytrain = np.loadtxt(vfnumpypath+"Ytrain.txt")
+Xval = np.loadtxt(vfnumpypath+"Xval.txt")
+Yval = np.loadtxt(vfnumpypath+"Yval.txt")
 
 #independent Model
 independent_model = MultiLabelClf(inference_method='unary')
